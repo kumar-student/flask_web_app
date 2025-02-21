@@ -1,5 +1,6 @@
 from flask import (
     Blueprint,
+    current_app,
     flash,
     redirect,
     render_template,
@@ -23,8 +24,11 @@ def create():
                 (author, message),
             )
             db.commit()
+            current_app.logger.info(f"New post by {author}")
             flash(f"Thanks for posting, {author}!", category="success")
             return redirect(url_for("posts.posts"))
+        else:
+            flash("You need to post a message.", category="error")
     return render_template("posts/create.html")
 
 @bp.route("/posts")
