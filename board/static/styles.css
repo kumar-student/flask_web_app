@@ -1,7 +1,19 @@
 * {
     box-sizing: border-box;
 }
-body {
+
+html {
+    background-color: rgba(248, 249, 250, 1) !important;
+}
+
+.logo {
+    border: 1px solid transparent;
+    border-radius: 25%;
+    height: 36px;
+    width: 36px;
+}
+
+/* body {
     font-family: sans-serif;
     font-size: 20px;
     margin: 0 auto;
@@ -95,4 +107,4 @@ font-size: 1em;
     .flash.success {
     background-color: #96faad;
     color: #1c7530;
-}
+} */
